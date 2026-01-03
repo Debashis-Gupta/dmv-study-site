@@ -6,5 +6,5 @@ import react from '@vitejs/plugin-react'
 // For local dev, this doesn't matter.
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/dmv-study-site/',
 })
