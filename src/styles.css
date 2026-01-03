@@ -1,0 +1,374 @@
+:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  color-scheme: light;
+  --bg: #0b1020;
+  --card: rgba(255,255,255,0.08);
+  --card2: rgba(255,255,255,0.12);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.70);
+  --accent: #7c3aed;
+  --good: #22c55e;
+  --bad: #ef4444;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 700px at 15% 10%, rgba(124,58,237,0.35), transparent 50%),
+              radial-gradient(900px 600px at 90% 30%, rgba(34,197,94,0.20), transparent 55%),
+              var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.badge {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 8px 12px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.9), rgba(34,197,94,0.75));
+  border-radius: 999px;
+}
+
+.nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+}
+.pill:hover { background: rgba(255,255,255,0.12); }
+
+.h1 { font-size: 34px; margin: 18px 0 8px; }
+.p { color: var(--muted); margin: 0 0 18px; }
+
+.card {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+.col-6 { grid-column: span 6; }
+.col-12 { grid-column: span 12; }
+
+/* Mobile and Tablet Responsive Design */
+@media (max-width: 768px) {
+  .col-6 { grid-column: span 12; }
+  
+  .container {
+    padding: 15px;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .nav-left {
+    text-align: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .nav-links {
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .pill {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  
+  .h1 { 
+    font-size: 28px; 
+    text-align: center;
+    margin: 16px 0 8px;
+  }
+  
+  .card {
+    padding: 14px;
+  }
+  
+  .grid {
+    gap: 12px;
+  }
+  
+  /* Practice page mobile improvements */
+  .option {
+    padding: 14px 12px;
+    font-size: 15px;
+  }
+  
+  .btn {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+  
+  .input, .select {
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Results screen mobile */
+  details {
+    padding: 10px;
+  }
+  
+  details summary {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 18px;
+  }
+  
+  .nav {
+    padding: 14px 18px;
+  }
+  
+  .h1 { 
+    font-size: 30px;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .option {
+    padding: 13px 12px;
+  }
+}
+
+/* Large mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .h1 {
+    font-size: 24px;
+  }
+  
+  .nav {
+    padding: 12px;
+  }
+  
+  .pill {
+    padding: 5px 7px;
+    font-size: 13px;
+  }
+  
+  .badge {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .card {
+    padding: 12px;
+  }
+  
+  .option {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  .btn-container {
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+  
+  .btn-container .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+input, select, button {
+  font: inherit;
+  color: inherit;
+}
+
+.input, .select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+}
+
+.btn {
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.10);
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-weight: 650;
+}
+.btn:hover { background: rgba(255,255,255,0.16); }
+
+.btn-primary {
+  background: rgba(124,58,237,0.70);
+  border-color: rgba(124,58,237,0.85);
+}
+.btn-primary:hover { background: rgba(124,58,237,0.85); }
+
+.kpi {
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.option {
+  text-align: left;
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.20);
+  cursor: pointer;
+}
+.option:hover { background: rgba(255,255,255,0.10); }
+
+.option.good { border-color: rgba(34,197,94,0.8); background: rgba(34,197,94,0.16); }
+.option.bad { border-color: rgba(239,68,68,0.85); background: rgba(239,68,68,0.14); }
+
+.small { font-size: 13px; color: var(--muted); }
+hr { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 16px 0; }
+
+/* Enhanced styles for the practice improvements */
+.card.good {
+  border-color: rgba(34,197,94,0.6);
+  background: rgba(34,197,94,0.08);
+}
+
+.card.bad {
+  border-color: rgba(239,68,68,0.6);
+  background: rgba(239,68,68,0.08);
+}
+
+/* Improved details/summary styling */
+details {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,0.04);
+}
+
+details summary {
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  margin: -8px -8px 8px -8px;
+}
+
+details summary:hover {
+  background: rgba(255,255,255,0.10);
+}
+
+/* Loading/disabled state improvements */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Pulse animation for waiting states */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Touch-friendly improvements for mobile */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  .btn, .option, .pill {
+    min-height: 44px; /* Apple's recommended minimum touch target */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Better spacing for touch interaction */
+  .nav-links {
+    gap: 8px;
+  }
+  
+  /* Flashcard specific mobile improvements */
+  .card[style*="cursor: pointer"] {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Prevent text selection on buttons and interactive elements */
+  .btn, .option, .pill, .card[style*="cursor: pointer"] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Better form inputs for mobile */
+  .input:focus, .select:focus {
+    outline: 2px solid rgba(124,58,237,0.6);
+    outline-offset: 2px;
+  }
+}
